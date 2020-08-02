@@ -1,0 +1,26 @@
+<!--
+ - Created by bjohnson on 7/12/20.
+ -->
+
+<!-- Lists And Interators -->
+<template>
+    <uL>
+        <template for:each={teams} for:item='team'>
+            <li key={team.id} class='slds-card slds-m-around--small card'>
+                <lightning-card class='card'>
+                    <h3 slot="title">
+                        {team.name} &#9732;
+                    </h3>
+                    <article class='slds-m-around--x-small slds-p-around--small'>
+                        <p class='slds-p-around--x-small'>City: {team.city}</p>
+                        <p class='slds-p-around--x-small'>arena: {team.arena}</p>
+                        <p class='slds-p-around--x-small'>Total Championships: {team.championships}</p>
+                    </article>
+                    <footer class='slds-card__footer'>
+                        <a href={team.link} target='_blank' class='link'>Get the Latest News</a>
+                    </footer>
+                </lightning-card>
+            </li>
+        </template>
+    </uL>
+</template>

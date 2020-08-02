@@ -1,0 +1,33 @@
+<!--
+ - Created by bjohnson on 7/26/20.
+ -->
+
+<!-- Boston Iterator -->
+
+    <template>
+        <lightning-layout class='container slds-scrollable slds-m-around--small' pull-to-boundary='medium'>
+
+            <lightning-layout-item flexibility='auto' class='slds-m-around--small'>
+       <uL>
+            <template for:each={teams} for:item='team'>
+                <li key={team.id} class='slds-m-around--small slds-border--top slds-border--bottom item'>
+                        <article class='slds-m-around--x-small slds-p-around--small'>
+                            <h1 class='slds-text-title_bold'> {team.name} &#9732;</h1>
+                            <p class='slds-p-around--x-small'>City: {team.city} Arena: {team.arena}</p>
+                            <p class='slds-p-around--x-small'>Total Championships: {team.championships}</p>
+                        </article>
+                        <footer class='slds-card__footer'>
+                            <a href={team.link} target='_blank' class='link'>Get the Latest News &#x1F4E3;</a>
+                            <p>
+                                <span>&#9990;</span> &nbsp;
+                            <lightning-formatted-phone class='number'
+                                    value='867-5309'></lightning-formatted-phone>
+                            </p>
+                        </footer>
+                </li>
+            </template>
+            </uL>
+            </lightning-layout-item>
+        </lightning-card>
+        </lightning-layout>
+    </template>
